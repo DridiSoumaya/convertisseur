@@ -1,1 +1,33 @@
-<p>convertisseur-devise works!</p>
+<div class="card mt-3">
+    <div class="card-header">
+        <h3> Réalisation d’un convertisseur Euro / Dollar </h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6 p-3 bg-primary text-white rounded">
+                <small>Insérez le montant que vous souhaitez convertir dans le champ ci-dessus: </small>
+                <div class="input-group mb-3 mt-2 col-6">
+                    <div class="input-group-text">Montant:</div>
+                    <input type="number" id="montant" [(ngModel)]="montant" (input)="convertirDevise()"
+                        class="form-control">
+                </div>
+                <div class="input-group col-6">
+                    <div class="input-group-text">Devise: </div>
+                    <select id="devise" [(ngModel)]="devise" (change)="convertirDevise()" class="form-control">
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+                <hr class="m-3" />
+                <p><strong>
+                        {{ montant }} {{ devise }} = {{ montantConverti | number:'1.2-2' }} {{autreDevise}}</strong></p>
+
+            </div>
+            <div class="col-6">
+                <label class="me-3 ">Taux de change :
+                    <span class="badge bg-primary display-right">{{this.tauxChange}}</span>
+                </label>
+                <hr />
+            </div>
+
+        </div>
