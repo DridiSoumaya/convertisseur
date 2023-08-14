@@ -28,6 +28,17 @@
                     <span class="badge bg-primary display-right">{{this.tauxChange}}</span>
                 </label>
                 <hr />
+                <!--<div class="input-group">
+                    <div class="input-group-text">Taux de change Manuelle:</div>
+                    <input type="number" id="manualTaux"  class="form-control" [(ngModel)]="manualTaux" (input)="convertirDevise()">
+                </div>-->
+                <div class="input-container">
+                    <label for="toggleFixed" class="me-3 mb-3">Taux de change fixe </label>
+                    <input id="toggleFixed" type="checkbox" [(ngModel)]="tauxChangeFixeActive"
+                        class="form-check-input border border-success">
+                    <input id="tauxFixe" type="number" [(ngModel)]="tauxChangeFixe"
+                        class="form-control border border-success">
+                </div>
             </div>
 
             <div class="col-12">
@@ -40,8 +51,8 @@
                             <th scope="col">Taux réel</th>
                             <th scope="col">Taux saisi</th>
                             <th scope="col">Montant initial</th>
-                            <th scope="col">Montant calculé</th>
                             <th scope="col">Devise initiale</th>
+                            <th scope="col">Montant calculé</th>
                             <th scope="col">Devise calculée</th>
                         </tr>
                     </thead>
