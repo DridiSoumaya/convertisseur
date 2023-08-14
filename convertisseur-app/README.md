@@ -6,22 +6,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Version 1.0.0 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Fonctionnalités Principales
 
-## Build
+- Affichage en temps réel du taux de change entre EUR et USD.
+- Saisie d'un taux de change fixe par l'utilisateur.
+- Conversion de montants entre EUR et USD en fonction du taux sélectionné.
+- Activation/Désactivation du taux de change fixe.
+- Historique des demandes de conversion calculée.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Fonctionnalités d'Amélioration
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Calculatrice de conversion avancée avec plusieurs devises.
+- Intégrer des API de données financières externes pour obtenir des taux de change en temps réel.
+- Notifications en cas de variation importante du taux de change.
+- Graphiques de taux de change : Intégrer des graphiques interactifs pour afficher l'évolution du taux de change sur une période donnée.
