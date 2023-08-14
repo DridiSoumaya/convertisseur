@@ -30,4 +30,36 @@
                 <hr />
             </div>
 
+            <div class="col-12">
+                <hr />
+                <h5 class="mb-3">Historique de conversion calculée
+                </h5>
+                <table class="table table-bordered rounded">
+                    <thead>
+                        <tr>
+                            <th scope="col">Taux réel</th>
+                            <th scope="col">Taux saisi</th>
+                            <th scope="col">Montant initial</th>
+                            <th scope="col">Montant calculé</th>
+                            <th scope="col">Devise initiale</th>
+                            <th scope="col">Devise calculée</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let history of conversionHistory">
+                            <td>{{ history.tauxReel | number:'1.2-2' }}</td>
+                            <td>{{ history.tauxSaisi | number:'1.2-2'}}</td>
+                            <td>{{ history.montantInitial }}</td>
+                            <td>{{ history.deviseInitiale }}</td>
+                            <td>{{ history.montantCalcule | number:'1.2-2' }}</td>
+                            <td>{{ history.deviseCalculee }}</td>
+                        </tr>
+                        <tr *ngIf="conversionHistory.length == 0">
+                            <td colspan="6" class="text-center">aucun résultat ...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>

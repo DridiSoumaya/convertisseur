@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import {conversionHistory} from './conversionHistory'
 
 @Component({
   selector: 'app-convertisseur-devise',
@@ -12,8 +13,8 @@ export class ConvertisseurDeviseComponent implements OnInit{
   montantConverti: number = 0;
   devise: string = 'EUR';
   autreDevise: string = "USD";
-  manualTaux: number = 0;
-  
+  conversionHistory: conversionHistory[] = [];
+
 
 
 
@@ -43,6 +44,20 @@ export class ConvertisseurDeviseComponent implements OnInit{
     } else if (this.devise === 'USD') {
       this.montantConverti = this.montant / this.tauxChange;
       this.autreDevise = 'EUR';
+    }
+    /** Ajouter un tableau d’historique des 5 dernières demandes de conversion calculées */
+    const historyEntry: conversionHistory = {
+      tauxReel: this.tauxChange,
+      tauxSaisi: this.tauxChange,
+      montantInitial: this.montant,
+      montantCalcule: this.montantConverti,
+      deviseInitiale: this.devise,
+      deviseCalculee: this.autreDevise,
+    };
+
+    this.conversionHistory.push(historyEntry);
+    if (this.conversionHistory.length > 5) {
+      this.conversionHistory.shift();
     }
   
   }
